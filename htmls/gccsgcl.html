@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<!--
+    	作者：gengtao2006@163.com
+    	时间：2017-10-17
+    	描述： 输变电项目水土保持工程措施工程量表
+
+    -->
+
+	<head>
+		<meta charset="utf-8">
+		<!--
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />-->
+		<meta name="viewport" content="initial-scale=1" />
+		<title>输变电项目水土保持工程措施工程量表</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/app.css">
+		<script src="js/exceljs.min.js"></script>
+		<script src="js/FileSaver.min.js"></script>
+		<script src="js/table2excel.js"></script>
+	</head>
+
+	<body>
+		<div>
+			<table class="table table-bordered" border="1" align="center">
+				<!--<caption>输变电项目水土保持工程量对比表</caption>-->
+				<thead>
+					<tr>
+						<th rowspan=2>标段</th>
+						<th rowspan=2>防治分区</th>
+						<th colspan=10>水土保持措施工程量</th>
+						<th rowspan=2>完成投资（万元）</th>
+					</tr>
+					<tr>
+						<th>浆砌石挡墙(m³)</th>
+						<th>浆砌石排水沟(m³)</th>
+						<th>砼排水沟(m³)</th>
+						<th>砼排水管(m)</th>
+						<th>浆砌石网格护坡(m³)</th>
+						<th>砼网格护坡(m³)</th>
+						<th>砾石覆盖(m³)</th>
+						<th>土地整治(㎡)</th>
+						<th>沙障(㎡)</th>
+						<th>草袋土围堰(m³)</th>
+					</tr>
+				</thead>
+				<tbody id="table_body">
+				</tbody>
+			</table>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.tmpl.js"></script>
+	<script id="tmpl_row" type="type/x-jquery-tmpl">
+		{{each(i,item) rows}}
+		<tr>
+			{{if item.sectionCnt >0}}
+			<td rowspan="${sectionCnt}">${section}</td>
+			{{/if}}
+			<td>${area}</td>
+			<td>${measure1}</td>
+			<td>${measure2}</td>
+			<td>${measure3}</td>
+			<td>${measure4}</td>
+			<td>${measure5}</td>
+			<td>${measure6}</td>
+			<td>${measure7}</td>
+			<td>${measure8}</td>
+			<td>${measure9}</td>
+			<td>${measure10}</td>
+			<td>${completion}</td>
+		</tr>
+		{{/each}}
+	</script>
+	<script>
+
+	//  //http://127.0.0.1:8020/hpsb/gccsgcl.html?section=淮东换流站&area=接地极区
+		var section = getUrlParam("section");
+		var area = getUrlParam("area");
+		fiterRefresh(section, area);
+
+		function fiterRefresh(section, area) {
+
+			jQuery.getJSON("data/gccsgcl.js",
+				function(data) {
+					var result = {
+						rows: []
+					};
+					var resultIndex = 0;
+					for(var i = 0; i < data.rows.length; i++) {
+						var row = data.rows[i];
+						if(row.section == section ||
+							section == null || section == "") {
+							if(row.area == area || area == null ||
+								area == "") {
+								result.rows[resultIndex++] = row;
+							}
+						}
+					}
+
+					//拆分措施类型
+					var sectionRow = null;
+					var indexCount = 0;
+					for(var i = 0; i < result.rows.length; i++) {
+						var row = result.rows[i];
+						if(sectionRow == null) {
+							sectionRow = row;
+						}
+						if(sectionRow.section != row.section) {
+							sectionRow.sectionCnt = indexCount;
+							sectionRow = row;
+							indexCount = 1;
+						} else {
+							indexCount++;
+							row.sectionCnt = 0;
+						}
+						if(i == result.rows.length - 1) {
+							sectionRow.sectionCnt = indexCount;
+						}
+					}
+					$('#table_body').empty();
+					$("#tmpl_row").tmpl(result).appendTo('#table_body');
+				}
+			);
+		}
+		function getUrlParam(name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+			if(r != null) return decodeURI(r[2]);
+			return null;
+		}
+	</script>
+
+</html>

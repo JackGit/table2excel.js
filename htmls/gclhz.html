@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<!--
+    	作者：gengtao2006@163.com
+    	时间：2017-10-17
+    	描述：输变电项目水土保持措施完成工程量汇总表
+
+    -->
+
+	<head>
+		<meta charset="utf-8">
+		<!--
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />-->
+		<meta name="viewport" content="initial-scale=1" />
+		<title>输变电项目水土保持措施完成工程量汇总表</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/app.css">
+		<script src="js/exceljs.min.js"></script>
+		<script src="js/FileSaver.min.js"></script>
+		<script src="js/table2excel.js"></script>
+	</head>
+
+	<body>
+		<div>
+			<table class="table table-bordered" border="1" align="center">
+				<!--<caption>输变电项目水土保持工程量对比表</caption>-->
+				<thead>
+					<tr>
+						<th rowspan=4>序号</th>
+						<th rowspan=4>水土保持措施项目名称</th>
+						<th rowspan=4>单位</th>
+						<th colspan=22>工程分区及工程量统计</th>
+						<th colspan="2" rowspan="3">合计</th>
+
+					</tr>
+					<tr>
+						<th colspan=14>点型工程区</th>
+						<th colspan=8>线型工程区</th>
+					</tr>
+					<th colspan=2>换流站站址区</th>
+					<th colspan=2>接地极区</th>
+					<th colspan=2>进站道路区</th>
+					<th colspan=2>站外供排水区</th>
+					<th colspan=2>站外供电线路区</th>
+					<th colspan=2>施工生产生活区</th>
+					<th colspan=2>弃渣场区</th>
+					<th colspan=2>塔基及施工区</th>
+					<th colspan=2>牵张场区</th>
+					<th colspan=2>施工道路区</th>
+					<th colspan=2>施工生产生活区</th>
+					</tr>
+					<tr>
+						<th>本季</th>
+						<th>累计</th>
+
+						<th>本季</th>
+						<th>累计</th>
+
+						<th>本季</th>
+						<th>累计</th>
+
+						<th>本季</th>
+						<th>累计</th>
+
+						<th>本季</th>
+						<th>累计</th>
+
+						<th>本季</th>
+						<th>累计</th>
+
+						<th>本季</th>
+						<th>累计</th>
+
+						<th>本季</th>
+						<th>累计</th>
+
+						<th>本季</th>
+						<th>累计</th>
+
+						<th>本季</th>
+						<th>累计</th>
+
+						<th>本季</th>
+						<th>累计</th>
+
+						<th>本季</th>
+						<th>累计</th>
+					</tr>
+				</thead>
+				<tbody id="table_body">
+				</tbody>
+			</table>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.tmpl.js"></script>
+	<script id="tmpl_row" type="type/x-jquery-tmpl">
+		{{each(i,item) rows}}
+		<tr>
+
+			<td>${xh}</td>
+			<td>${measureName}</td>
+			<td>${unit}</td>
+			{{each(i,measurePoint) item.measurePointList}}
+			<td>${measurePoint.season}</td>
+			<td>${measurePoint.cumulative}</td>
+			{{/each}} {{each(i,measureLine) item.measureLineList}}
+			<td>${measureLine.season}</td>
+			<td>${measureLine.cumulative}</td>
+			{{/each}}
+			<td>${item.total.season}</td>
+			<td>${item.total.cumulative}</td>
+
+		</tr>
+		{{/each}}
+	</script>
+	<script>
+		jQuery.getJSON("data/gclhz.js",
+			function(data) {
+				var result = data;
+
+				$("#tmpl_row").tmpl(result).appendTo('#table_body');
+			}
+		);
+	</script>
+
+</html>
