@@ -70,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 198);
+/******/ 	return __webpack_require__(__webpack_require__.s = 199);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1921,7 +1921,7 @@ function loadLocale(name) {
         try {
             oldLocale = globalLocale._abbr;
             var aliasedRequire = require;
-            __webpack_require__(345)("./" + name);
+            __webpack_require__(346)("./" + name);
             getSetGlobalLocale(oldLocale);
         } catch (e) {}
     }
@@ -4592,7 +4592,7 @@ return hooks;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(344)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(345)(module)))
 
 /***/ }),
 /* 1 */
@@ -4763,7 +4763,7 @@ var utils = module.exports = {
 
 
 
-var Sax = __webpack_require__(271);
+var Sax = __webpack_require__(272);
 var PromishLib = __webpack_require__(12);
 
 var XmlStream = __webpack_require__(8);
@@ -4865,7 +4865,7 @@ BaseXform.prototype = {
 var support = __webpack_require__(14);
 var base64 = __webpack_require__(53);
 var nodejsUtils = __webpack_require__(30);
-var setImmediate = __webpack_require__(230);
+var setImmediate = __webpack_require__(231);
 var external = __webpack_require__(24);
 
 
@@ -5448,8 +5448,8 @@ module.exports = _;
 
 
 
-var base64 = __webpack_require__(216)
-var ieee754 = __webpack_require__(217)
+var base64 = __webpack_require__(217)
+var ieee754 = __webpack_require__(218)
 var isArray = __webpack_require__(47)
 
 exports.Buffer = Buffer
@@ -8261,10 +8261,10 @@ var inherits = __webpack_require__(20);
 
 inherits(Stream, EE);
 Stream.Readable = __webpack_require__(34);
-Stream.Writable = __webpack_require__(226);
-Stream.Duplex = __webpack_require__(227);
-Stream.Transform = __webpack_require__(228);
-Stream.PassThrough = __webpack_require__(229);
+Stream.Writable = __webpack_require__(227);
+Stream.Duplex = __webpack_require__(228);
+Stream.Transform = __webpack_require__(229);
+Stream.PassThrough = __webpack_require__(230);
 
 // Backwards-compat with node 0.4.x
 Stream.Stream = Stream;
@@ -8687,7 +8687,7 @@ function forEach(xs, f) {
 
     if (true) {
         if ("undefined" !== typeof module && module.exports) {
-            module.exports = defineExtended(__webpack_require__(330));
+            module.exports = defineExtended(__webpack_require__(331));
 
         }
     } else if ("function" === typeof define && define.amd) {
@@ -9026,9 +9026,9 @@ if (typeof Object.create === 'function') {
     hasOwn = Object.prototype.hasOwnProperty;
 module.exports = __webpack_require__(18)()
     .register(is)
-    .register(__webpack_require__(334))
-    .register(__webpack_require__(336))
-    .register("LINE_BREAK", __webpack_require__(338).EOL)
+    .register(__webpack_require__(335))
+    .register(__webpack_require__(337))
+    .register("LINE_BREAK", __webpack_require__(339).EOL)
     .register("asyncEach", function (arr, iter, cb) {
 
 
@@ -9721,7 +9721,7 @@ var ES6Promise = null;
 if (typeof Promise !== "undefined") {
     ES6Promise = Promise;
 } else {
-    ES6Promise = __webpack_require__(244);
+    ES6Promise = __webpack_require__(245);
 }
 
 /**
@@ -10855,7 +10855,7 @@ exports.Readable = exports;
 exports.Writable = __webpack_require__(36);
 exports.Duplex = __webpack_require__(17);
 exports.Transform = __webpack_require__(52);
-exports.PassThrough = __webpack_require__(225);
+exports.PassThrough = __webpack_require__(226);
 
 
 /***/ }),
@@ -11003,7 +11003,7 @@ util.inherits = __webpack_require__(20);
 
 /*<replacement>*/
 var internalUtil = {
-  deprecate: __webpack_require__(224)
+  deprecate: __webpack_require__(225)
 };
 /*</replacement>*/
 
@@ -11651,7 +11651,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(223);
+__webpack_require__(224);
 exports.setImmediate = setImmediate;
 exports.clearImmediate = clearImmediate;
 
@@ -12202,7 +12202,7 @@ function isPrimitive(arg) {
 }
 exports.isPrimitive = isPrimitive;
 
-exports.isBuffer = __webpack_require__(248);
+exports.isBuffer = __webpack_require__(249);
 
 function objectToString(o) {
   return Object.prototype.toString.call(o);
@@ -12246,7 +12246,7 @@ exports.log = function() {
  *     prototype.
  * @param {function} superCtor Constructor function to inherit prototype from.
  */
-exports.inherits = __webpack_require__(249);
+exports.inherits = __webpack_require__(250);
 
 exports._extend = function(origin, add) {
   // Don't do anything if add isn't an object
@@ -13248,7 +13248,7 @@ utils.inherits(TextXform, BaseXform, {
 
     if (true) {
         if ("undefined" !== typeof module && module.exports) {
-            module.exports = defineArray(__webpack_require__(18), __webpack_require__(22), __webpack_require__(335));
+            module.exports = defineArray(__webpack_require__(18), __webpack_require__(22), __webpack_require__(336));
         }
     } else if ("function" === typeof define && define.amd) {
         define(["extended", "is-extended", "arguments-extended"], function (extended, is, args) {
@@ -13369,7 +13369,7 @@ util.inherits = __webpack_require__(20);
 /*</replacement>*/
 
 /*<replacement>*/
-var debugUtil = __webpack_require__(221);
+var debugUtil = __webpack_require__(222);
 var debug = void 0;
 if (debugUtil && debugUtil.debuglog) {
   debug = debugUtil.debuglog('stream');
@@ -13378,7 +13378,7 @@ if (debugUtil && debugUtil.debuglog) {
 }
 /*</replacement>*/
 
-var BufferList = __webpack_require__(222);
+var BufferList = __webpack_require__(223);
 var destroyImpl = __webpack_require__(51);
 var StringDecoder;
 
@@ -14737,7 +14737,7 @@ if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
-var aFunction = __webpack_require__(233);
+var aFunction = __webpack_require__(234);
 module.exports = function(fn, that, length){
   aFunction(fn);
   if(that === undefined)return fn;
@@ -14789,7 +14789,7 @@ module.exports = function(it){
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
 var utils = __webpack_require__(3);
-var ConvertWorker = __webpack_require__(246);
+var ConvertWorker = __webpack_require__(247);
 var GenericWorker = __webpack_require__(7);
 var base64 = __webpack_require__(53);
 var support = __webpack_require__(14);
@@ -14798,7 +14798,7 @@ var external = __webpack_require__(24);
 var NodejsStreamOutputAdapter = null;
 if (support.nodestream) {
     try {
-        NodejsStreamOutputAdapter = __webpack_require__(247);
+        NodejsStreamOutputAdapter = __webpack_require__(248);
     } catch(e) {}
 }
 
@@ -15234,7 +15234,7 @@ exports.STORE = {
         return new GenericWorker("STORE decompression");
     }
 };
-exports.DEFLATE = __webpack_require__(252);
+exports.DEFLATE = __webpack_require__(253);
 
 
 /***/ }),
@@ -15706,8 +15706,8 @@ exports.DATA_DESCRIPTOR = "PK\x07\x08";
 var utils = __webpack_require__(3);
 var support = __webpack_require__(14);
 var ArrayReader = __webpack_require__(71);
-var StringReader = __webpack_require__(266);
-var NodeBufferReader = __webpack_require__(267);
+var StringReader = __webpack_require__(267);
+var NodeBufferReader = __webpack_require__(268);
 var Uint8ArrayReader = __webpack_require__(73);
 
 /**
@@ -15966,7 +15966,7 @@ var Stream = __webpack_require__(15);
 var PromishLib = __webpack_require__(12);
 
 var utils = __webpack_require__(1);
-var StringBuf = __webpack_require__(269);
+var StringBuf = __webpack_require__(270);
 
 // =============================================================================
 // data chunks - encapsulating incoming data
@@ -16330,10 +16330,10 @@ utils.inherits(StreamBuf, Stream.Duplex, {
 
 
 var ColorXform = __webpack_require__(33);
-var BooleanXform = __webpack_require__(272);
+var BooleanXform = __webpack_require__(273);
 var IntegerXform = __webpack_require__(76);
 var StringXform = __webpack_require__(44);
-var UnderlineXform = __webpack_require__(273);
+var UnderlineXform = __webpack_require__(274);
 
 var _ = __webpack_require__(4);
 var utils = __webpack_require__(1);
@@ -28049,7 +28049,7 @@ return zhTw;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants__ = __webpack_require__(346);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants__ = __webpack_require__(198);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_file_saver__ = __webpack_require__(347);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_file_saver___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_file_saver__);
 
@@ -28128,14 +28128,15 @@ const mergeCells = (sheet, x1, y1, x2, y2) => {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__table2excel__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(197);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "table2Excel", function() { return __WEBPACK_IMPORTED_MODULE_0__table2excel__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "saveAsExcel", function() { return __WEBPACK_IMPORTED_MODULE_1__utils__["b"]; });
+const MIME_TYPES = {
+  xls: 'application/vnd.ms-excel',
+  xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = MIME_TYPES;
 
 
-
+const WIDTH_RATIO = .6
+/* harmony export (immutable) */ __webpack_exports__["b"] = WIDTH_RATIO;
 
 
 
@@ -28144,13 +28145,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_exceljs_dist_es5_exceljs_browser__ = __webpack_require__(200);
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__table2excel__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(197);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "table2Excel", function() { return __WEBPACK_IMPORTED_MODULE_0__table2excel__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "saveAsExcel", function() { return __WEBPACK_IMPORTED_MODULE_1__utils__["b"]; });
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ((table, filename, ext) => Object(__WEBPACK_IMPORTED_MODULE_1__utils__["b" /* saveAsExcel */])(Object(__WEBPACK_IMPORTED_MODULE_0__table2excel__["a" /* default */])(table), filename, ext));
+
+
+/***/ }),
+/* 200 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_exceljs_dist_es5_exceljs_browser__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_exceljs_dist_es5_exceljs_browser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_exceljs_dist_es5_exceljs_browser__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants__ = __webpack_require__(198);
 
 
 
-const SIZE_RATIO = 6
 
 function table2Excel (tables, options) {
 
@@ -28175,7 +28194,7 @@ function table2Excel (tables, options) {
 }
 
 function table2Sheet (table, sheet, options) {
-  // 并不能通过第一行或者第一列来获取 col 或者 row 的总数，因为可能他们有 span
+  // get total cols and rows
   const totalRows = table.rows.length
   const totalCols = Math.max(...Array.from(table.rows).map(row => row.cells.length))
 
@@ -28239,7 +28258,7 @@ function table2Sheet (table, sheet, options) {
 
     if (colRange.from === colRange.to) {
       // set column width
-      sheet.getColumn(colRange.from + 1).width = (+cellStyle.width.split('px')[0]) / SIZE_RATIO
+      sheet.getColumn(colRange.from + 1).width = (+cellStyle.width.split('px')[0]) * __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* WIDTH_RATIO */]
     }
 
     const fontWeight = cellStyle.fontWeight
@@ -28259,18 +28278,18 @@ function table2Sheet (table, sheet, options) {
 
 
 /***/ }),
-/* 200 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 // for the benefit of browserify, include browser friendly promise
-var setConfigValue = __webpack_require__(201);
-setConfigValue('promise', __webpack_require__(202), false);
+var setConfigValue = __webpack_require__(202);
+setConfigValue('promise', __webpack_require__(203), false);
 
 var ExcelJS = {
-  Workbook: __webpack_require__(206)
+  Workbook: __webpack_require__(207)
 };
 
 // Object.assign mono-fill
@@ -28285,7 +28304,7 @@ module.exports = ExcelJS;
 
 
 /***/ }),
-/* 201 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28313,20 +28332,20 @@ module.exports = setValue;
 
 
 /***/ }),
-/* 202 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var ES6Promise = __webpack_require__(203).Promise;
-var generate = __webpack_require__(205);
+var ES6Promise = __webpack_require__(204).Promise;
+var generate = __webpack_require__(206);
 module.exports = generate(ES6Promise);
 //# sourceMappingURL=es6-promish.js.map
 
 
 /***/ }),
-/* 203 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, global) {var require;/*!
@@ -28461,7 +28480,7 @@ function flush() {
 function attemptVertx() {
   try {
     var r = require;
-    var vertx = __webpack_require__(204);
+    var vertx = __webpack_require__(205);
     vertxNext = vertx.runOnLoop || vertx.runOnContext;
     return useVertxTimer();
   } catch (e) {
@@ -29486,13 +29505,13 @@ return Promise;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9), __webpack_require__(10)))
 
 /***/ }),
-/* 204 */
+/* 205 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 205 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29901,7 +29920,7 @@ module.exports = generatePromish;
 
 
 /***/ }),
-/* 206 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29913,10 +29932,10 @@ module.exports = generatePromish;
 
 
 
-var Worksheet = __webpack_require__(207);
-var DefinedNames = __webpack_require__(213);
-var XLSX = __webpack_require__(215);
-var CSV = __webpack_require__(326);
+var Worksheet = __webpack_require__(208);
+var DefinedNames = __webpack_require__(214);
+var XLSX = __webpack_require__(216);
+var CSV = __webpack_require__(327);
 
 // Workbook requirements
 //  Load and Save from file and stream
@@ -30114,7 +30133,7 @@ Workbook.prototype = {
 
 
 /***/ }),
-/* 207 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30130,10 +30149,10 @@ var _ = __webpack_require__(4);
 
 var colCache = __webpack_require__(6);
 var Range = __webpack_require__(26);
-var Row = __webpack_require__(208);
-var Column = __webpack_require__(211);
+var Row = __webpack_require__(209);
+var Column = __webpack_require__(212);
 var Enums = __webpack_require__(13);
-var DataValidations = __webpack_require__(212);
+var DataValidations = __webpack_require__(213);
 
 // Worksheet requirements
 //  Operate as sheet inside workbook or standalone
@@ -30764,7 +30783,7 @@ Worksheet.prototype = {
 
 
 /***/ }),
-/* 208 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30780,7 +30799,7 @@ var _ = __webpack_require__(4);
 
 var Enums = __webpack_require__(13);
 var colCache = __webpack_require__(6);
-var Cell = __webpack_require__(209);
+var Cell = __webpack_require__(210);
 
 var Row = module.exports = function (worksheet, number) {
   this._worksheet = worksheet;
@@ -31134,7 +31153,7 @@ Row.prototype = {
 
 
 /***/ }),
-/* 209 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31149,7 +31168,7 @@ Row.prototype = {
 var colCache = __webpack_require__(6);
 var Enums = __webpack_require__(13);
 
-var _require = __webpack_require__(210),
+var _require = __webpack_require__(211),
     slideFormula = _require.slideFormula;
 
 // Cell requirements
@@ -32027,7 +32046,7 @@ var Value = {
 
 
 /***/ }),
-/* 210 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32084,7 +32103,7 @@ module.exports = {
 
 
 /***/ }),
-/* 211 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32349,7 +32368,7 @@ Column.fromModel = function (worksheet, cols) {
 
 
 /***/ }),
-/* 212 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32380,7 +32399,7 @@ DataValidations.prototype = {
 
 
 /***/ }),
-/* 213 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32394,7 +32413,7 @@ DataValidations.prototype = {
 
 var _ = __webpack_require__(4);
 var colCache = __webpack_require__(6);
-var CellMatrix = __webpack_require__(214);
+var CellMatrix = __webpack_require__(215);
 var Range = __webpack_require__(26);
 
 var rangeRegexp = /[$](\w+)[$](\d+)(:[$](\w+)[$](\d+))?/;
@@ -32559,7 +32578,7 @@ DefinedNames.prototype = {
 
 
 /***/ }),
-/* 214 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32697,7 +32716,7 @@ module.exports = CellMatrix;
 
 
 /***/ }),
-/* 215 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32710,25 +32729,25 @@ module.exports = CellMatrix;
 
 
 var fs = __webpack_require__(11);
-var ZipStream = __webpack_require__(218);
+var ZipStream = __webpack_require__(219);
 var StreamBuf = __webpack_require__(74);
 var PromishLib = __webpack_require__(12);
 
 var utils = __webpack_require__(1);
 var XmlStream = __webpack_require__(8);
 
-var StylesXform = __webpack_require__(270);
+var StylesXform = __webpack_require__(271);
 
-var CoreXform = __webpack_require__(280);
-var SharedStringsXform = __webpack_require__(282);
-var RelationshipsXform = __webpack_require__(285);
-var ContentTypesXform = __webpack_require__(287);
-var AppXform = __webpack_require__(288);
-var WorkbookXform = __webpack_require__(291);
-var WorksheetXform = __webpack_require__(296);
-var DrawingXform = __webpack_require__(317);
+var CoreXform = __webpack_require__(281);
+var SharedStringsXform = __webpack_require__(283);
+var RelationshipsXform = __webpack_require__(286);
+var ContentTypesXform = __webpack_require__(288);
+var AppXform = __webpack_require__(289);
+var WorkbookXform = __webpack_require__(292);
+var WorksheetXform = __webpack_require__(297);
+var DrawingXform = __webpack_require__(318);
 
-var theme1Xml = __webpack_require__(325);
+var theme1Xml = __webpack_require__(326);
 
 var XLSX = module.exports = function (workbook) {
   this.workbook = workbook;
@@ -33340,7 +33359,7 @@ XLSX.prototype = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5).Buffer))
 
 /***/ }),
-/* 216 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33461,7 +33480,7 @@ function fromByteArray (uint8) {
 
 
 /***/ }),
-/* 217 */
+/* 218 */
 /***/ (function(module, exports) {
 
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -33551,7 +33570,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 
 /***/ }),
-/* 218 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33570,7 +33589,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 var events = __webpack_require__(27);
 var PromishLib = __webpack_require__(12);
 
-var JSZip = __webpack_require__(219);
+var JSZip = __webpack_require__(220);
 
 var utils = __webpack_require__(1);
 var StreamBuf = __webpack_require__(74);
@@ -33715,7 +33734,7 @@ module.exports = {
 
 
 /***/ }),
-/* 219 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33756,8 +33775,8 @@ function JSZip() {
         return newObj;
     };
 }
-JSZip.prototype = __webpack_require__(220);
-JSZip.prototype.loadAsync = __webpack_require__(264);
+JSZip.prototype = __webpack_require__(221);
+JSZip.prototype.loadAsync = __webpack_require__(265);
 JSZip.support = __webpack_require__(14);
 JSZip.defaults = __webpack_require__(59);
 
@@ -33774,7 +33793,7 @@ module.exports = JSZip;
 
 
 /***/ }),
-/* 220 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33785,10 +33804,10 @@ var GenericWorker = __webpack_require__(7);
 var StreamHelper = __webpack_require__(58);
 var defaults = __webpack_require__(59);
 var CompressedObject = __webpack_require__(41);
-var ZipObject = __webpack_require__(250);
-var generate = __webpack_require__(251);
+var ZipObject = __webpack_require__(251);
+var generate = __webpack_require__(252);
 var nodejsUtils = __webpack_require__(30);
-var NodejsStreamInputAdapter = __webpack_require__(263);
+var NodejsStreamInputAdapter = __webpack_require__(264);
 
 
 /**
@@ -34170,13 +34189,13 @@ module.exports = out;
 
 
 /***/ }),
-/* 221 */
+/* 222 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 222 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34256,7 +34275,7 @@ module.exports = function () {
 }();
 
 /***/ }),
-/* 223 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -34449,7 +34468,7 @@ module.exports = function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10), __webpack_require__(9)))
 
 /***/ }),
-/* 224 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {
@@ -34523,7 +34542,7 @@ function config (name) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
 
 /***/ }),
-/* 225 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34576,59 +34595,59 @@ PassThrough.prototype._transform = function (chunk, encoding, cb) {
 };
 
 /***/ }),
-/* 226 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(36);
 
 
 /***/ }),
-/* 227 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(17);
 
 
 /***/ }),
-/* 228 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(34).Transform
 
 
 /***/ }),
-/* 229 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(34).PassThrough
 
 
 /***/ }),
-/* 230 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(231);
-module.exports = __webpack_require__(54).setImmediate;
-
-/***/ }),
 /* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var $export = __webpack_require__(232)
-  , $task   = __webpack_require__(240);
+__webpack_require__(232);
+module.exports = __webpack_require__(54).setImmediate;
+
+/***/ }),
+/* 232 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $export = __webpack_require__(233)
+  , $task   = __webpack_require__(241);
 $export($export.G + $export.B, {
   setImmediate:   $task.set,
   clearImmediate: $task.clear
 });
 
 /***/ }),
-/* 232 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global    = __webpack_require__(31)
   , core      = __webpack_require__(54)
   , ctx       = __webpack_require__(55)
-  , hide      = __webpack_require__(234)
+  , hide      = __webpack_require__(235)
   , PROTOTYPE = 'prototype';
 
 var $export = function(type, name, source){
@@ -34688,7 +34707,7 @@ $export.R = 128; // real proto method for `library`
 module.exports = $export;
 
 /***/ }),
-/* 233 */
+/* 234 */
 /***/ (function(module, exports) {
 
 module.exports = function(it){
@@ -34697,11 +34716,11 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 234 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP         = __webpack_require__(235)
-  , createDesc = __webpack_require__(239);
+var dP         = __webpack_require__(236)
+  , createDesc = __webpack_require__(240);
 module.exports = __webpack_require__(39) ? function(object, key, value){
   return dP.f(object, key, createDesc(1, value));
 } : function(object, key, value){
@@ -34710,12 +34729,12 @@ module.exports = __webpack_require__(39) ? function(object, key, value){
 };
 
 /***/ }),
-/* 235 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var anObject       = __webpack_require__(236)
-  , IE8_DOM_DEFINE = __webpack_require__(237)
-  , toPrimitive    = __webpack_require__(238)
+var anObject       = __webpack_require__(237)
+  , IE8_DOM_DEFINE = __webpack_require__(238)
+  , toPrimitive    = __webpack_require__(239)
   , dP             = Object.defineProperty;
 
 exports.f = __webpack_require__(39) ? Object.defineProperty : function defineProperty(O, P, Attributes){
@@ -34731,7 +34750,7 @@ exports.f = __webpack_require__(39) ? Object.defineProperty : function definePro
 };
 
 /***/ }),
-/* 236 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(38);
@@ -34741,7 +34760,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 237 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = !__webpack_require__(39) && !__webpack_require__(56)(function(){
@@ -34749,7 +34768,7 @@ module.exports = !__webpack_require__(39) && !__webpack_require__(56)(function()
 });
 
 /***/ }),
-/* 238 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
@@ -34766,7 +34785,7 @@ module.exports = function(it, S){
 };
 
 /***/ }),
-/* 239 */
+/* 240 */
 /***/ (function(module, exports) {
 
 module.exports = function(bitmap, value){
@@ -34779,12 +34798,12 @@ module.exports = function(bitmap, value){
 };
 
 /***/ }),
-/* 240 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx                = __webpack_require__(55)
-  , invoke             = __webpack_require__(241)
-  , html               = __webpack_require__(242)
+  , invoke             = __webpack_require__(242)
+  , html               = __webpack_require__(243)
   , cel                = __webpack_require__(57)
   , global             = __webpack_require__(31)
   , process            = global.process
@@ -34821,7 +34840,7 @@ if(!setTask || !clearTask){
     delete queue[id];
   };
   // Node.js 0.8-
-  if(__webpack_require__(243)(process) == 'process'){
+  if(__webpack_require__(244)(process) == 'process'){
     defer = function(id){
       process.nextTick(ctx(run, id, 1));
     };
@@ -34859,7 +34878,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 241 */
+/* 242 */
 /***/ (function(module, exports) {
 
 // fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -34880,13 +34899,13 @@ module.exports = function(fn, args, that){
 };
 
 /***/ }),
-/* 242 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(31).document && document.documentElement;
 
 /***/ }),
-/* 243 */
+/* 244 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -34896,12 +34915,12 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 244 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var immediate = __webpack_require__(245);
+var immediate = __webpack_require__(246);
 
 /* istanbul ignore next */
 function INTERNAL() {}
@@ -35156,7 +35175,7 @@ function race(iterable) {
 
 
 /***/ }),
-/* 245 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35233,7 +35252,7 @@ function immediate(task) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
 
 /***/ }),
-/* 246 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35266,7 +35285,7 @@ module.exports = ConvertWorker;
 
 
 /***/ }),
-/* 247 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35315,7 +35334,7 @@ module.exports = NodejsStreamOutputAdapter;
 
 
 /***/ }),
-/* 248 */
+/* 249 */
 /***/ (function(module, exports) {
 
 module.exports = function isBuffer(arg) {
@@ -35326,7 +35345,7 @@ module.exports = function isBuffer(arg) {
 }
 
 /***/ }),
-/* 249 */
+/* 250 */
 /***/ (function(module, exports) {
 
 if (typeof Object.create === 'function') {
@@ -35355,7 +35374,7 @@ if (typeof Object.create === 'function') {
 
 
 /***/ }),
-/* 250 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35486,14 +35505,14 @@ module.exports = ZipObject;
 
 
 /***/ }),
-/* 251 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var compressions = __webpack_require__(63);
-var ZipFileWorker = __webpack_require__(262);
+var ZipFileWorker = __webpack_require__(263);
 
 /**
  * Find the compression to use.
@@ -35550,14 +35569,14 @@ exports.generateWorker = function (zip, options, comment) {
 
 
 /***/ }),
-/* 252 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var USE_TYPEDARRAY = (typeof Uint8Array !== 'undefined') && (typeof Uint16Array !== 'undefined') && (typeof Uint32Array !== 'undefined');
 
-var pako = __webpack_require__(253);
+var pako = __webpack_require__(254);
 var utils = __webpack_require__(3);
 var GenericWorker = __webpack_require__(7);
 
@@ -35625,7 +35644,7 @@ exports.uncompressWorker = function () {
 
 
 /***/ }),
-/* 253 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35634,8 +35653,8 @@ exports.uncompressWorker = function () {
 
 var assign    = __webpack_require__(16).assign;
 
-var deflate   = __webpack_require__(254);
-var inflate   = __webpack_require__(257);
+var deflate   = __webpack_require__(255);
+var inflate   = __webpack_require__(258);
 var constants = __webpack_require__(68);
 
 var pako = {};
@@ -35646,14 +35665,14 @@ module.exports = pako;
 
 
 /***/ }),
-/* 254 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 
-var zlib_deflate = __webpack_require__(255);
+var zlib_deflate = __webpack_require__(256);
 var utils        = __webpack_require__(16);
 var strings      = __webpack_require__(66);
 var msg          = __webpack_require__(43);
@@ -36053,7 +36072,7 @@ exports.gzip = gzip;
 
 
 /***/ }),
-/* 255 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36079,7 +36098,7 @@ exports.gzip = gzip;
 // 3. This notice may not be removed or altered from any source distribution.
 
 var utils   = __webpack_require__(16);
-var trees   = __webpack_require__(256);
+var trees   = __webpack_require__(257);
 var adler32 = __webpack_require__(64);
 var crc32   = __webpack_require__(65);
 var msg     = __webpack_require__(43);
@@ -37934,7 +37953,7 @@ exports.deflateTune = deflateTune;
 
 
 /***/ }),
-/* 256 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39161,20 +39180,20 @@ exports._tr_align = _tr_align;
 
 
 /***/ }),
-/* 257 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 
-var zlib_inflate = __webpack_require__(258);
+var zlib_inflate = __webpack_require__(259);
 var utils        = __webpack_require__(16);
 var strings      = __webpack_require__(66);
 var c            = __webpack_require__(68);
 var msg          = __webpack_require__(43);
 var ZStream      = __webpack_require__(67);
-var GZheader     = __webpack_require__(261);
+var GZheader     = __webpack_require__(262);
 
 var toString = Object.prototype.toString;
 
@@ -39586,7 +39605,7 @@ exports.ungzip  = inflate;
 
 
 /***/ }),
-/* 258 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39614,8 +39633,8 @@ exports.ungzip  = inflate;
 var utils         = __webpack_require__(16);
 var adler32       = __webpack_require__(64);
 var crc32         = __webpack_require__(65);
-var inflate_fast  = __webpack_require__(259);
-var inflate_table = __webpack_require__(260);
+var inflate_fast  = __webpack_require__(260);
+var inflate_table = __webpack_require__(261);
 
 var CODES = 0;
 var LENS = 1;
@@ -41149,7 +41168,7 @@ exports.inflateUndermine = inflateUndermine;
 
 
 /***/ }),
-/* 259 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41501,7 +41520,7 @@ module.exports = function inflate_fast(strm, start) {
 
 
 /***/ }),
-/* 260 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41851,7 +41870,7 @@ module.exports = function inflate_table(type, lens, lens_index, codes, table, ta
 
 
 /***/ }),
-/* 261 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41916,7 +41935,7 @@ module.exports = GZheader;
 
 
 /***/ }),
-/* 262 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42463,7 +42482,7 @@ module.exports = ZipFileWorker;
 
 
 /***/ }),
-/* 263 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42544,7 +42563,7 @@ module.exports = NodejsStreamInputAdapter;
 
 
 /***/ }),
-/* 264 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42553,7 +42572,7 @@ var utils = __webpack_require__(3);
 var external = __webpack_require__(24);
 var utf8 = __webpack_require__(19);
 var utils = __webpack_require__(3);
-var ZipEntries = __webpack_require__(265);
+var ZipEntries = __webpack_require__(266);
 var Crc32Probe = __webpack_require__(62);
 var nodejsUtils = __webpack_require__(30);
 
@@ -42633,7 +42652,7 @@ module.exports = function(data, options) {
 
 
 /***/ }),
-/* 265 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42641,7 +42660,7 @@ module.exports = function(data, options) {
 var readerFor = __webpack_require__(70);
 var utils = __webpack_require__(3);
 var sig = __webpack_require__(69);
-var ZipEntry = __webpack_require__(268);
+var ZipEntry = __webpack_require__(269);
 var utf8 = __webpack_require__(19);
 var support = __webpack_require__(14);
 //  class ZipEntries {{{
@@ -42902,7 +42921,7 @@ module.exports = ZipEntries;
 
 
 /***/ }),
-/* 266 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42947,7 +42966,7 @@ module.exports = StringReader;
 
 
 /***/ }),
-/* 267 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42973,7 +42992,7 @@ module.exports = NodeBufferReader;
 
 
 /***/ }),
-/* 268 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43272,7 +43291,7 @@ module.exports = ZipEntry;
 
 
 /***/ }),
-/* 269 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43369,7 +43388,7 @@ StringBuf.prototype = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5).Buffer))
 
 /***/ }),
-/* 270 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43391,10 +43410,10 @@ var BaseXform = __webpack_require__(2);
 var StaticXform = __webpack_require__(25);
 var ListXform = __webpack_require__(32);
 var FontXform = __webpack_require__(75);
-var FillXform = __webpack_require__(274);
-var BorderXform = __webpack_require__(275);
-var NumFmtXform = __webpack_require__(276);
-var StyleXform = __webpack_require__(278);
+var FillXform = __webpack_require__(275);
+var BorderXform = __webpack_require__(276);
+var NumFmtXform = __webpack_require__(277);
+var StyleXform = __webpack_require__(279);
 
 // custom numfmt ids start here
 var NUMFMT_BASE = 164;
@@ -43829,7 +43848,7 @@ utils.inherits(StylesXform.Mock, StylesXform, {
 
 
 /***/ }),
-/* 271 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {;(function (sax) { // wrapper for non-node envs
@@ -45401,7 +45420,7 @@ utils.inherits(StylesXform.Mock, StylesXform, {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5).Buffer))
 
 /***/ }),
-/* 272 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45444,7 +45463,7 @@ utils.inherits(BooleanXform, BaseXform, {
 
 
 /***/ }),
-/* 273 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45503,7 +45522,7 @@ utils.inherits(UnderlineXform, BaseXform, {
 
 
 /***/ }),
-/* 274 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45837,7 +45856,7 @@ utils.inherits(FillXform, BaseXform, {
 
 
 /***/ }),
-/* 275 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46029,7 +46048,7 @@ utils.inherits(BorderXform, BaseXform, {
 
 
 /***/ }),
-/* 276 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46043,7 +46062,7 @@ utils.inherits(BorderXform, BaseXform, {
 
 var _ = __webpack_require__(4);
 var utils = __webpack_require__(1);
-var defaultNumFormats = __webpack_require__(277);
+var defaultNumFormats = __webpack_require__(278);
 
 var BaseXform = __webpack_require__(2);
 
@@ -46102,7 +46121,7 @@ utils.inherits(NumFmtXform, BaseXform, {
 
 
 /***/ }),
-/* 277 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46181,7 +46200,7 @@ module.exports = {
 
 
 /***/ }),
-/* 278 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46196,7 +46215,7 @@ module.exports = {
 var utils = __webpack_require__(1);
 var BaseXform = __webpack_require__(2);
 
-var AlignmentXform = __webpack_require__(279);
+var AlignmentXform = __webpack_require__(280);
 
 // <xf numFmtId="[numFmtId]" fontId="[fontId]" fillId="[fillId]" borderId="[xf.borderId]" xfId="[xfId]">
 //   Optional <alignment>
@@ -46294,7 +46313,7 @@ utils.inherits(StyleXform, BaseXform, {
 
 
 /***/ }),
-/* 279 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46460,7 +46479,7 @@ utils.inherits(AlignmentXform, BaseXform, {
 
 
 /***/ }),
-/* 280 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46475,7 +46494,7 @@ utils.inherits(AlignmentXform, BaseXform, {
 var utils = __webpack_require__(1);
 var XmlStream = __webpack_require__(8);
 var BaseXform = __webpack_require__(2);
-var DateXform = __webpack_require__(281);
+var DateXform = __webpack_require__(282);
 var StringXform = __webpack_require__(44);
 
 var CoreXform = module.exports = function () {
@@ -46591,7 +46610,7 @@ utils.inherits(CoreXform, BaseXform, {
 
 
 /***/ }),
-/* 281 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46660,7 +46679,7 @@ utils.inherits(DateXform, BaseXform, {
 
 
 /***/ }),
-/* 282 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46675,7 +46694,7 @@ utils.inherits(DateXform, BaseXform, {
 var utils = __webpack_require__(1);
 var XmlStream = __webpack_require__(8);
 var BaseXform = __webpack_require__(2);
-var SharedStringXform = __webpack_require__(283);
+var SharedStringXform = __webpack_require__(284);
 
 var SharedStringsXform = module.exports = function (model) {
   this.model = model || {
@@ -46794,7 +46813,7 @@ utils.inherits(SharedStringsXform, BaseXform, {
 
 
 /***/ }),
-/* 283 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46808,7 +46827,7 @@ utils.inherits(SharedStringsXform, BaseXform, {
 
 var TextXform = __webpack_require__(45);
 var RichTextXform = __webpack_require__(77);
-var PhoneticTextXform = __webpack_require__(284);
+var PhoneticTextXform = __webpack_require__(285);
 
 var utils = __webpack_require__(1);
 var BaseXform = __webpack_require__(2);
@@ -46903,7 +46922,7 @@ utils.inherits(SharedStringXform, BaseXform, {
 
 
 /***/ }),
-/* 284 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47012,7 +47031,7 @@ utils.inherits(PhoneticTextXform, BaseXform, {
 
 
 /***/ }),
-/* 285 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47028,7 +47047,7 @@ var utils = __webpack_require__(1);
 var XmlStream = __webpack_require__(8);
 var BaseXform = __webpack_require__(2);
 
-var RelationshipXform = __webpack_require__(286);
+var RelationshipXform = __webpack_require__(287);
 
 var RelationshipsXform = module.exports = function () {
   this.map = {
@@ -47095,7 +47114,7 @@ utils.inherits(RelationshipsXform, BaseXform, {
 
 
 /***/ }),
-/* 286 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47135,7 +47154,7 @@ utils.inherits(RelationshipXform, BaseXform, {
 
 
 /***/ }),
-/* 287 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47220,7 +47239,7 @@ utils.inherits(ContentTypesXform, BaseXform, {
 
 
 /***/ }),
-/* 288 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47237,8 +47256,8 @@ var XmlStream = __webpack_require__(8);
 var BaseXform = __webpack_require__(2);
 var StringXform = __webpack_require__(44);
 
-var AppHeadingPairsXform = __webpack_require__(289);
-var AppTitleOfPartsXform = __webpack_require__(290);
+var AppHeadingPairsXform = __webpack_require__(290);
+var AppTitleOfPartsXform = __webpack_require__(291);
 
 var AppXform = module.exports = function () {
   this.map = {
@@ -47330,7 +47349,7 @@ utils.inherits(AppXform, BaseXform, {
 
 
 /***/ }),
-/* 289 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47377,7 +47396,7 @@ utils.inherits(AppHeadingPairsXform, BaseXform, {
 
 
 /***/ }),
-/* 290 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47420,7 +47439,7 @@ utils.inherits(AppTitlesOfPartsXform, BaseXform, {
 
 
 /***/ }),
-/* 291 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47441,10 +47460,10 @@ var XmlStream = __webpack_require__(8);
 var BaseXform = __webpack_require__(2);
 var StaticXform = __webpack_require__(25);
 var ListXform = __webpack_require__(32);
-var DefinedNameXform = __webpack_require__(292);
-var SheetXform = __webpack_require__(293);
-var WorkbookViewXform = __webpack_require__(294);
-var WorkbookPropertiesXform = __webpack_require__(295);
+var DefinedNameXform = __webpack_require__(293);
+var SheetXform = __webpack_require__(294);
+var WorkbookViewXform = __webpack_require__(295);
+var WorkbookPropertiesXform = __webpack_require__(296);
 
 var WorkbookXform = module.exports = function () {
   this.map = {
@@ -47627,7 +47646,7 @@ utils.inherits(WorkbookXform, BaseXform, {
 
 
 /***/ }),
-/* 292 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47720,7 +47739,7 @@ function extractRanges(parsedText) {
 
 
 /***/ }),
-/* 293 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47767,7 +47786,7 @@ utils.inherits(WorksheetXform, BaseXform, {
 
 
 /***/ }),
-/* 294 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47835,7 +47854,7 @@ utils.inherits(WorkbookViewXform, BaseXform, {
 
 
 /***/ }),
-/* 295 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47880,7 +47899,7 @@ utils.inherits(WorksheetPropertiesXform, BaseXform, {
 
 
 /***/ }),
-/* 296 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47899,26 +47918,26 @@ var XmlStream = __webpack_require__(8);
 
 var RelType = __webpack_require__(78);
 
-var Merges = __webpack_require__(297);
+var Merges = __webpack_require__(298);
 
 var BaseXform = __webpack_require__(2);
 var ListXform = __webpack_require__(32);
-var RowXform = __webpack_require__(298);
-var ColXform = __webpack_require__(300);
-var DimensionXform = __webpack_require__(301);
-var HyperlinkXform = __webpack_require__(302);
-var MergeCellXform = __webpack_require__(303);
-var DataValidationsXform = __webpack_require__(304);
-var SheetPropertiesXform = __webpack_require__(305);
-var SheetFormatPropertiesXform = __webpack_require__(307);
-var SheetViewXform = __webpack_require__(308);
-var PageMarginsXform = __webpack_require__(309);
-var PageSetupXform = __webpack_require__(310);
-var PrintOptionsXform = __webpack_require__(311);
-var AutoFilterXform = __webpack_require__(312);
-var PictureXform = __webpack_require__(313);
-var DrawingXform = __webpack_require__(314);
-var RowBreaksXform = __webpack_require__(315);
+var RowXform = __webpack_require__(299);
+var ColXform = __webpack_require__(301);
+var DimensionXform = __webpack_require__(302);
+var HyperlinkXform = __webpack_require__(303);
+var MergeCellXform = __webpack_require__(304);
+var DataValidationsXform = __webpack_require__(305);
+var SheetPropertiesXform = __webpack_require__(306);
+var SheetFormatPropertiesXform = __webpack_require__(308);
+var SheetViewXform = __webpack_require__(309);
+var PageMarginsXform = __webpack_require__(310);
+var PageSetupXform = __webpack_require__(311);
+var PrintOptionsXform = __webpack_require__(312);
+var AutoFilterXform = __webpack_require__(313);
+var PictureXform = __webpack_require__(314);
+var DrawingXform = __webpack_require__(315);
+var RowBreaksXform = __webpack_require__(316);
 
 var WorkSheetXform = module.exports = function () {
   this.map = {
@@ -48205,7 +48224,7 @@ utils.inherits(WorkSheetXform, BaseXform, {
 
 
 /***/ }),
-/* 297 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48274,7 +48293,7 @@ Merges.prototype = {
 
 
 /***/ }),
-/* 298 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48289,7 +48308,7 @@ Merges.prototype = {
 var utils = __webpack_require__(1);
 var BaseXform = __webpack_require__(2);
 
-var CellXform = __webpack_require__(299);
+var CellXform = __webpack_require__(300);
 
 var RowXform = module.exports = function () {
   this.map = {
@@ -48431,7 +48450,7 @@ utils.inherits(RowXform, BaseXform, {
 
 
 /***/ }),
-/* 299 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48818,7 +48837,7 @@ utils.inherits(CellXform, BaseXform, {
 
 
 /***/ }),
-/* 300 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48916,7 +48935,7 @@ utils.inherits(ColXform, BaseXform, {
 
 
 /***/ }),
-/* 301 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48961,7 +48980,7 @@ utils.inherits(DimensionXform, BaseXform, {
 
 
 /***/ }),
-/* 302 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49010,7 +49029,7 @@ utils.inherits(HyperlinkXform, BaseXform, {
 
 
 /***/ }),
-/* 303 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49053,7 +49072,7 @@ utils.inherits(MergeCellXform, BaseXform, {
 
 
 /***/ }),
-/* 304 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49243,7 +49262,7 @@ utils.inherits(DataValidationsXform, BaseXform, {
 
 
 /***/ }),
-/* 305 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49258,7 +49277,7 @@ utils.inherits(DataValidationsXform, BaseXform, {
 var utils = __webpack_require__(1);
 var BaseXform = __webpack_require__(2);
 var ColorXform = __webpack_require__(33);
-var PageSetupPropertiesXform = __webpack_require__(306);
+var PageSetupPropertiesXform = __webpack_require__(307);
 
 var SheetPropertiesXform = module.exports = function () {
   this.map = {
@@ -49339,7 +49358,7 @@ utils.inherits(SheetPropertiesXform, BaseXform, {
 
 
 /***/ }),
-/* 306 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49390,7 +49409,7 @@ utils.inherits(PageSetupPropertiesXform, BaseXform, {
 
 
 /***/ }),
-/* 307 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49451,7 +49470,7 @@ utils.inherits(SheetFormatPropertiesXform, BaseXform, {
 
 
 /***/ }),
-/* 308 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49658,7 +49677,7 @@ utils.inherits(SheetViewXform, BaseXform, {
 
 
 /***/ }),
-/* 309 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49725,7 +49744,7 @@ utils.inherits(PageMarginsXform, BaseXform, {
 
 
 /***/ }),
-/* 310 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49846,7 +49865,7 @@ utils.inherits(PageSetupXform, BaseXform, {
 
 
 /***/ }),
-/* 311 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49913,7 +49932,7 @@ utils.inherits(PrintOptionsXform, BaseXform, {
 
 
 /***/ }),
-/* 312 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49969,7 +49988,7 @@ utils.inherits(AutoFilterXform, BaseXform, {
 
 
 /***/ }),
-/* 313 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50018,7 +50037,7 @@ utils.inherits(PictureXform, BaseXform, {
 
 
 /***/ }),
-/* 314 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50067,7 +50086,7 @@ utils.inherits(DrawingXform, BaseXform, {
 
 
 /***/ }),
-/* 315 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50079,7 +50098,7 @@ utils.inherits(DrawingXform, BaseXform, {
 
 
 
-var PageBreaksXform = __webpack_require__(316);
+var PageBreaksXform = __webpack_require__(317);
 
 var utils = __webpack_require__(1);
 var ListXform = __webpack_require__(32);
@@ -50116,7 +50135,7 @@ utils.inherits(RowBreaksXform, ListXform, {
 
 
 /***/ }),
-/* 316 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50159,7 +50178,7 @@ utils.inherits(PageBreaksXform, BaseXform, {
 
 
 /***/ }),
-/* 317 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50175,7 +50194,7 @@ var utils = __webpack_require__(1);
 var XmlStream = __webpack_require__(8);
 
 var BaseXform = __webpack_require__(2);
-var TwoCellAnchorXform = __webpack_require__(318);
+var TwoCellAnchorXform = __webpack_require__(319);
 
 var WorkSheetXform = module.exports = function () {
   this.map = {
@@ -50269,7 +50288,7 @@ utils.inherits(WorkSheetXform, BaseXform, {
 
 
 /***/ }),
-/* 318 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50286,8 +50305,8 @@ var colCache = __webpack_require__(6);
 var BaseXform = __webpack_require__(2);
 var StaticXform = __webpack_require__(25);
 
-var CellPositionXform = __webpack_require__(319);
-var PicXform = __webpack_require__(320);
+var CellPositionXform = __webpack_require__(320);
+var PicXform = __webpack_require__(321);
 
 var TwoCellAnchorXform = module.exports = function () {
   this.map = {
@@ -50408,7 +50427,7 @@ utils.inherits(TwoCellAnchorXform, BaseXform, {
 
 
 /***/ }),
-/* 319 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50501,7 +50520,7 @@ utils.inherits(CellPositionXform, BaseXform, {
 
 
 /***/ }),
-/* 320 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50517,10 +50536,10 @@ var utils = __webpack_require__(1);
 var BaseXform = __webpack_require__(2);
 var StaticXform = __webpack_require__(25);
 
-var BlipFillXform = __webpack_require__(321);
-var NvPicPrXform = __webpack_require__(323);
+var BlipFillXform = __webpack_require__(322);
+var NvPicPrXform = __webpack_require__(324);
 
-var spPrJSON = __webpack_require__(324);
+var spPrJSON = __webpack_require__(325);
 
 var PicXform = module.exports = function () {
   this.map = {
@@ -50591,7 +50610,7 @@ utils.inherits(PicXform, BaseXform, {
 
 
 /***/ }),
-/* 321 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50605,7 +50624,7 @@ utils.inherits(PicXform, BaseXform, {
 
 var utils = __webpack_require__(1);
 var BaseXform = __webpack_require__(2);
-var BlipXform = __webpack_require__(322);
+var BlipXform = __webpack_require__(323);
 
 var BlipFillXform = module.exports = function () {
   this.map = {
@@ -50676,7 +50695,7 @@ utils.inherits(BlipFillXform, BaseXform, {
 
 
 /***/ }),
-/* 322 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50736,7 +50755,7 @@ utils.inherits(BlipXform, BaseXform, {
 
 
 /***/ }),
-/* 323 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50789,7 +50808,7 @@ utils.inherits(NvPicPrXform, BaseXform, {
 
 
 /***/ }),
-/* 324 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50810,7 +50829,7 @@ module.exports = {
 
 
 /***/ }),
-/* 325 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50822,7 +50841,7 @@ module.exports = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<a:th
 
 
 /***/ }),
-/* 326 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50837,7 +50856,7 @@ module.exports = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<a:th
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var fs = __webpack_require__(11);
-var csv = __webpack_require__(327);
+var csv = __webpack_require__(328);
 var moment = __webpack_require__(0);
 var PromishLib = __webpack_require__(12);
 
@@ -50992,13 +51011,13 @@ CSV.prototype = {
 
 
 /***/ }),
-/* 327 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(328);
+module.exports = __webpack_require__(329);
 
 /***/ }),
-/* 328 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -51009,8 +51028,8 @@ module.exports = __webpack_require__(328);
  */
 
 var fs = __webpack_require__(11),
-    parser = __webpack_require__(329),
-    formatter = __webpack_require__(341);
+    parser = __webpack_require__(330),
+    formatter = __webpack_require__(342);
 
 function csv() {
     return parser.apply(void 0, arguments);
@@ -51032,14 +51051,14 @@ csv.createReadStream = formatter.createWriteStream;
 module.exports = csv;
 
 /***/ }),
-/* 329 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {var extended = __webpack_require__(21),
     out = process.stdout,
     stream = __webpack_require__(15),
     fs = __webpack_require__(11),
-    ParserStream = __webpack_require__(339);
+    ParserStream = __webpack_require__(340);
 
 
 function parse(options) {
@@ -51069,13 +51088,13 @@ module.exports = parse;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
 
 /***/ }),
-/* 330 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(331);
+module.exports = __webpack_require__(332);
 
 /***/ }),
-/* 331 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function () {
@@ -51606,7 +51625,7 @@ module.exports = __webpack_require__(331);
 
     if (true) {
         if ("undefined" !== typeof module && module.exports) {
-            module.exports = defineExtender(__webpack_require__(332));
+            module.exports = defineExtender(__webpack_require__(333));
 
         }
     } else if ("function" === typeof define && define.amd) {
@@ -51620,13 +51639,13 @@ module.exports = __webpack_require__(331);
 }).call(this);
 
 /***/ }),
-/* 332 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(333);
+module.exports = __webpack_require__(334);
 
 /***/ }),
-/* 333 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function () {
@@ -52557,7 +52576,7 @@ module.exports = __webpack_require__(333);
 
 
 /***/ }),
-/* 334 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function () {
@@ -52779,7 +52798,7 @@ module.exports = __webpack_require__(333);
 
 
 /***/ }),
-/* 335 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function () {
@@ -52828,7 +52847,7 @@ module.exports = __webpack_require__(333);
 
 
 /***/ }),
-/* 336 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function () {
@@ -53458,7 +53477,7 @@ module.exports = __webpack_require__(333);
 
     if (true) {
         if ("undefined" !== typeof module && module.exports) {
-            module.exports = defineString(__webpack_require__(18), __webpack_require__(22), __webpack_require__(337), __webpack_require__(46));
+            module.exports = defineString(__webpack_require__(18), __webpack_require__(22), __webpack_require__(338), __webpack_require__(46));
 
         }
     } else if ("function" === typeof define && define.amd) {
@@ -53479,7 +53498,7 @@ module.exports = __webpack_require__(333);
 
 
 /***/ }),
-/* 337 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function () {
@@ -54431,7 +54450,7 @@ module.exports = __webpack_require__(333);
 
 
 /***/ }),
-/* 338 */
+/* 339 */
 /***/ (function(module, exports) {
 
 exports.endianness = function () { return 'LE' };
@@ -54482,7 +54501,7 @@ exports.EOL = '\n';
 
 
 /***/ }),
-/* 339 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {var extended = __webpack_require__(21),
@@ -54493,7 +54512,7 @@ exports.EOL = '\n';
     stream = __webpack_require__(15),
     EMPTY = /^\s*(?:''|"")?\s*(?:,\s*(?:''|"")?\s*)*$/,
     DEFAULT_DELIMITER = ",",
-    createParser = __webpack_require__(340),
+    createParser = __webpack_require__(341),
     fs = __webpack_require__(11),
     StringDecoder = __webpack_require__(29).StringDecoder,
     hasIsPaused = !!stream.Transform.prototype.isPaused;
@@ -54855,7 +54874,7 @@ module.exports = ParserStream;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
 
 /***/ }),
-/* 340 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var extended = __webpack_require__(21),
@@ -55071,7 +55090,7 @@ module.exports = createParser;
 
 
 /***/ }),
-/* 341 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var fs = __webpack_require__(11),
@@ -55079,7 +55098,7 @@ module.exports = createParser;
     escape = extended.escape,
     stream = __webpack_require__(15),
     LINE_BREAK = extended.LINE_BREAK,
-    CsvTransformStream = __webpack_require__(342);
+    CsvTransformStream = __webpack_require__(343);
 
 
 function createWriteStream(options) {
@@ -55158,7 +55177,7 @@ module.exports = createWriteStream;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5).Buffer))
 
 /***/ }),
-/* 342 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var fs = __webpack_require__(11),
@@ -55170,7 +55189,7 @@ module.exports = createWriteStream;
     stream = __webpack_require__(15),
     Transform = stream.Transform,
     LINE_BREAK = extended.LINE_BREAK,
-    formatter = __webpack_require__(343),
+    formatter = __webpack_require__(344),
     createFormatter = formatter.createFormatter,
     checkHeaders = formatter.checkHeaders,
     transformItem = formatter.transformItem,
@@ -55258,7 +55277,7 @@ module.exports = CsvTransformStream;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5).Buffer))
 
 /***/ }),
-/* 343 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var fs = __webpack_require__(11),
@@ -55458,7 +55477,7 @@ exports.defaultTransform = defaultTransform;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5).Buffer))
 
 /***/ }),
-/* 344 */
+/* 345 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -55486,7 +55505,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 345 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -55741,20 +55760,7 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 345;
-
-/***/ }),
-/* 346 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-const MIME_TYPES = {
-  xls: '',
-  xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = MIME_TYPES;
-
-
+webpackContext.id = 346;
 
 /***/ }),
 /* 347 */

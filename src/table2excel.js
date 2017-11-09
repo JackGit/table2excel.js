@@ -1,7 +1,6 @@
 import ExcelJS from 'exceljs/dist/es5/exceljs.browser'
 import { mergeCells } from './utils'
-
-const SIZE_RATIO = 6
+import { WIDTH_RATIO } from './constants'
 
 function table2Excel (tables, options) {
 
@@ -26,7 +25,7 @@ function table2Excel (tables, options) {
 }
 
 function table2Sheet (table, sheet, options) {
-  // 并不能通过第一行或者第一列来获取 col 或者 row 的总数，因为可能他们有 span
+  // get total cols and rows
   const totalRows = table.rows.length
   const totalCols = Math.max(...Array.from(table.rows).map(row => row.cells.length))
 
@@ -90,7 +89,7 @@ function table2Sheet (table, sheet, options) {
 
     if (colRange.from === colRange.to) {
       // set column width
-      sheet.getColumn(colRange.from + 1).width = (+cellStyle.width.split('px')[0]) / SIZE_RATIO
+      sheet.getColumn(colRange.from + 1).width = (+cellStyle.width.split('px')[0]) * WIDTH_RATIO
     }
 
     const fontWeight = cellStyle.fontWeight
