@@ -57,7 +57,7 @@ function table2Excel (tables, options = {}) {
 
     table2Sheet(table, sheet, { workbook, options, sheetIndex: index, tableEls: tables })
 
-    // worksheetConverted
+    // worksheetCompleted
     ;(options.plugins || [])
       .map(plugin => plugin.worksheetConverted)
       .filter(plugin => plugin)
