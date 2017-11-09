@@ -10,14 +10,14 @@ function table2Excel (tables, options) {
       : tables
     )
 
-  const workbook = new ExcelJS.Workbook()
+  const workbook = new ExcelJS.Workbook() // create workbook
   workbook.views = [{
     x: 0, y: 0, width: 10000, height: 20000,
     firstSheet: 0, activeTab: 1, visibility: 'visible'
   }]
 
   tables.forEach((table, index) => {
-    const sheet = workbook.addWorksheet(`Sheet ${index + 1}`)
+    const sheet = workbook.addWorksheet(`Sheet ${index + 1}`) // create worksheet
     table2Sheet(table, sheet, options)
   })
 
@@ -84,7 +84,7 @@ function table2Sheet (table, sheet, options) {
   cells.forEach(cell => {
     const { rowRange, colRange, el } = cell
     const { innerText } = el
-    const sheetCell = mergeCells(sheet, colRange.from, rowRange.from, colRange.to, rowRange.to)
+    const sheetCell = mergeCells(sheet, colRange.from, rowRange.from, colRange.to, rowRange.to) // cell created
     const cellStyle = getComputedStyle(el)
 
     if (colRange.from === colRange.to) {
