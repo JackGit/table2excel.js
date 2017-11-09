@@ -59,3 +59,10 @@ export const mergeCells = (sheet, x1, y1, x2, y2) => {
   sheet.mergeCells(fromCell, toCell)
   return sheet.getCell(fromCell)
 }
+
+/**
+ * convert rgb(0,0,0) rgba(0,0,0) to argb: FF00FF00
+ */
+export const argb = color => {
+
+}

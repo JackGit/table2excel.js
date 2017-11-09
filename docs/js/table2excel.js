@@ -28081,7 +28081,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
 var PLUGIN_FUNCS = ['workbookCreated', 'worksheetCreated', 'worksheetCompleted', 'workcellCreated'];
-var defaultWorkbookOptions = {
+var DEFAULT_WORKBOOK_OPTIONS = {
   views: [{
     x: 0, y: 0, width: 10000, height: 20000,
     firstSheet: 0, activeTab: 1, visibility: 'visible'
@@ -28094,7 +28094,7 @@ var Table2Excel = function () {
 
     var selector = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'table';
     var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
-      workbook: defaultWorkbookOptions,
+      workbook: DEFAULT_WORKBOOK_OPTIONS,
       plugins: [],
       widthRatio: __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* WIDTH_RATIO */]
     };
@@ -55758,6 +55758,7 @@ webpackContext.id = 344;
 /* unused harmony export columnIndex */
 /* unused harmony export cellPosition */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return mergeCells; });
+/* unused harmony export argb */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants__ = __webpack_require__(197);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_file_saver__ = __webpack_require__(346);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_file_saver___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_file_saver__);
@@ -55822,6 +55823,11 @@ var mergeCells = function mergeCells(sheet, x1, y1, x2, y2) {
 	sheet.mergeCells(fromCell, toCell);
 	return sheet.getCell(fromCell);
 };
+
+/**
+ * convert rgb(0,0,0) rgba(0,0,0) to argb: FF00FF00
+ */
+var argb = function argb(color) {};
 
 /***/ }),
 /* 346 */
