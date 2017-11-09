@@ -131,28 +131,29 @@
 		}
 
 		function run () {
-			return Table2Excel.table2Excel('table', {
+			return new Table2Excel.default('table', {
+				widthRatio: .1,
 				plugins: [{
 					worksheetCreated (context) {
 						console.log('sheet created')
 						context.worksheet.getColumn(1).outlineLevel = 5
 					},
-					cellCreated (context) {
-						context.cell.style.font = {
-							...context.cell.style.font,
+					workcellCreated (context) {
+						context.workcell.style.font = {
+							...context.workcell.style.font,
 							bold: true
 						}
 					}
 				},{
-					cellCreated (context) {
-						context.cell.value = { text: context.cellEl.innerText, hyperlink: 'http://www.mylink.com' }
-						context.cell.style.font = {
-							...context.cell.style.font,
+					workcellCreated (context) {
+						context.workcell.value = { text: context.cell.innerText, hyperlink: 'http://www.mylink.com' }
+						context.workcell.style.font = {
+							...context.workcell.style.font,
 							color: {argb:'FF0000FF'}
 						}
 					},
-					worksheetConverted (context) {
-						console.log('worksheetConverted')
+					worksheetCompleted (context) {
+						console.log('worksheetConverted', context)
 						context.worksheet.getRow(1).hidden = true
 						context.worksheet.getColumn(1).hidden = true
 					}
