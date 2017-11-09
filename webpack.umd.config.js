@@ -1,9 +1,10 @@
 module.exports = {
   entry: './src/table2excel.js',
   output: {
-    filename: './dist/table2excel.js',
+    filename: './dist/table2excel.min.js',
     library: 'Table2Excel',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    libraryExport: 'default'
   },
   module: {
     rules: [
@@ -16,5 +17,7 @@ module.exports = {
       }
     ]
   },
-  node: {fs: "empty"}
+  node: {
+    fs: 'empty'
+  }
 };

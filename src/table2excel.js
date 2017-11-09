@@ -16,8 +16,8 @@ export default class Table2Excel {
     selector = 'table',
     options = {
       workbook: DEFAULT_WORKBOOK_OPTIONS,
-      plugins: [],
       widthRatio: WIDTH_RATIO
+      plugins: []
     }
   ) {
     this.tables = Array.from(
