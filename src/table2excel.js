@@ -2,7 +2,25 @@ import ExcelJS from 'exceljs/dist/es5/exceljs.browser'
 import { mergeCells } from './utils'
 import { WIDTH_RATIO } from './constants'
 
-function table2Excel (tables, options) {
+const defaultWorkbookOptions = {
+  views: [{
+    x: 0, y: 0, width: 10000, height: 20000,
+    firstSheet: 0, activeTab: 1, visibility: 'visible'
+  }]
+}
+/**
+ * options = {
+ *   workbook: {},
+ *   autoCellWidth: true
+ *   autoCellAlignment: true
+ *   rowBlackList: [],
+ *   colBlackList: [],
+ *   rowWhiteList: [],
+ *   colWhiteList: [],
+ *   plugins: []
+ * }
+ */
+function table2Excel (tables, options = {}) {
 
   tables = Array.from(
     typeof tables === 'string'
@@ -16,15 +34,46 @@ function table2Excel (tables, options) {
     firstSheet: 0, activeTab: 1, visibility: 'visible'
   }]
 
+  // workbookCreated plugins
+  ;(options.plugins || [])
+    .map(plugin => plugin.workbookCreated)
+    .filter(plugin => plugin)
+    .forEach(plugin => plugin.call(null, { workbook, tableEls: tables }))
+
   tables.forEach((table, index) => {
     const sheet = workbook.addWorksheet(`Sheet ${index + 1}`) // create worksheet
-    table2Sheet(table, sheet, options)
+
+    // worksheetCreated plugins
+    ;(options.plugins || [])
+      .map(plugin => plugin.worksheetCreated)
+      .filter(plugin => plugin)
+      .forEach(plugin => plugin.call(null, {
+        workbook,
+        worksheet: sheet,
+        sheetIndex: index,
+        tableEls: tables,
+        tableEl: table
+      }))
+
+    table2Sheet(table, sheet, { workbook, options, sheetIndex: index, tableEls: tables })
+
+    // worksheetConverted
+    ;(options.plugins || [])
+      .map(plugin => plugin.worksheetConverted)
+      .filter(plugin => plugin)
+      .forEach(plugin => plugin.call(null, {
+        workbook,
+        worksheet: sheet,
+        sheetIndex: index,
+        tableEls: tables,
+        tableEl: table
+      }))
   })
 
   return workbook
 }
 
-function table2Sheet (table, sheet, options) {
+function table2Sheet (table, sheet, { workbook, options, sheetIndex, tableEls }) {
   // get total cols and rows
   const totalRows = table.rows.length
   const totalCols = Math.max(...Array.from(table.rows).map(row => row.cells.length))
@@ -92,16 +141,26 @@ function table2Sheet (table, sheet, options) {
       sheet.getColumn(colRange.from + 1).width = (+cellStyle.width.split('px')[0]) * WIDTH_RATIO
     }
 
-    const fontWeight = cellStyle.fontWeight
-
     sheetCell.value = innerText
     sheetCell.style = {
-      font: { bold: (fontWeight === 'bold' || +fontWeight > 600) ? true : false },
       alignment: {
         vertical: cellStyle.verticalAlign,
         horizontal: cellStyle.textAlign
       }
     }
+
+    ;(options.plugins || [])
+      .map(plugin => plugin.cellCreated)
+      .filter(plugin => plugin)
+      .forEach(plugin => plugin.call(null, {
+        workbook,
+        worksheet: sheet,
+        sheetIndex,
+        tableEls,
+        tableEl: table,
+        cell: sheetCell,
+        cellEl: el
+      }))
   })
 }
 

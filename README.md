@@ -1,5 +1,5 @@
 row / col white / black list
-
+can be archived by Row.hidden = true, Column.hidden = true
 cell background color
 
 plugin
@@ -10,15 +10,20 @@ plugin
 比如：parse row 阶段，parse col 阶段，parse cell 阶段
 
 ！！！抽取出核心的阶段 ！！！
-workbookCreated ({ workbook }) {}
-worksheetCreated ({ workbook, worksheet, tableEl, sheetIndex }) {}
-cellCreated ({ workbook, worksheet, tableEl, sheetIndex, cell, cellEl })
+
+```js
+const myPlugin = {
+  workbookCreated ({ workbook }) {}
+  worksheetCreated ({ workbook, worksheet, tableEl, sheetIndex }) {}
+  cellCreated ({ workbook, worksheet, tableEl, sheetIndex, cell, cellEl })
+}
+```
 
 provide standalone full functional script build, and also the simplest core build
 
 ```js
 table2Excel('table', {
-  plugins: []
+  plugins: [fontPlugin, backgroundColorPlugin]
 })
 
 ```

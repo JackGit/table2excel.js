@@ -28171,7 +28171,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-function table2Excel (tables, options) {
+const defaultWorkbookOptions = {
+  views: [{
+    x: 0, y: 0, width: 10000, height: 20000,
+    firstSheet: 0, activeTab: 1, visibility: 'visible'
+  }]
+}
+/**
+ * options = {
+ *   workbook: {},
+ *   autoCellWidth: true
+ *   autoCellAlignment: true
+ *   rowBlackList: [],
+ *   colBlackList: [],
+ *   rowWhiteList: [],
+ *   colWhiteList: [],
+ *   plugins: []
+ * }
+ */
+function table2Excel (tables, options = {}) {
 
   tables = Array.from(
     typeof tables === 'string'
@@ -28179,21 +28197,52 @@ function table2Excel (tables, options) {
       : tables
     )
 
-  const workbook = new __WEBPACK_IMPORTED_MODULE_0_exceljs_dist_es5_exceljs_browser___default.a.Workbook()
+  const workbook = new __WEBPACK_IMPORTED_MODULE_0_exceljs_dist_es5_exceljs_browser___default.a.Workbook() // create workbook
   workbook.views = [{
     x: 0, y: 0, width: 10000, height: 20000,
     firstSheet: 0, activeTab: 1, visibility: 'visible'
   }]
 
+  // workbookCreated plugins
+  ;(options.plugins || [])
+    .map(plugin => plugin.workbookCreated)
+    .filter(plugin => plugin)
+    .forEach(plugin => plugin.call(null, { workbook, tableEls: tables }))
+
   tables.forEach((table, index) => {
-    const sheet = workbook.addWorksheet(`Sheet ${index + 1}`)
-    table2Sheet(table, sheet, options)
+    const sheet = workbook.addWorksheet(`Sheet ${index + 1}`) // create worksheet
+
+    // worksheetCreated plugins
+    ;(options.plugins || [])
+      .map(plugin => plugin.worksheetCreated)
+      .filter(plugin => plugin)
+      .forEach(plugin => plugin.call(null, {
+        workbook,
+        worksheet: sheet,
+        sheetIndex: index,
+        tableEls: tables,
+        tableEl: table
+      }))
+
+    table2Sheet(table, sheet, { workbook, options, sheetIndex: index, tableEls: tables })
+
+    // worksheetConverted
+    ;(options.plugins || [])
+      .map(plugin => plugin.worksheetConverted)
+      .filter(plugin => plugin)
+      .forEach(plugin => plugin.call(null, {
+        workbook,
+        worksheet: sheet,
+        sheetIndex: index,
+        tableEls: tables,
+        tableEl: table
+      }))
   })
 
   return workbook
 }
 
-function table2Sheet (table, sheet, options) {
+function table2Sheet (table, sheet, { workbook, options, sheetIndex, tableEls }) {
   // get total cols and rows
   const totalRows = table.rows.length
   const totalCols = Math.max(...Array.from(table.rows).map(row => row.cells.length))
@@ -28253,7 +28302,7 @@ function table2Sheet (table, sheet, options) {
   cells.forEach(cell => {
     const { rowRange, colRange, el } = cell
     const { innerText } = el
-    const sheetCell = Object(__WEBPACK_IMPORTED_MODULE_1__utils__["a" /* mergeCells */])(sheet, colRange.from, rowRange.from, colRange.to, rowRange.to)
+    const sheetCell = Object(__WEBPACK_IMPORTED_MODULE_1__utils__["a" /* mergeCells */])(sheet, colRange.from, rowRange.from, colRange.to, rowRange.to) // cell created
     const cellStyle = getComputedStyle(el)
 
     if (colRange.from === colRange.to) {
@@ -28261,16 +28310,26 @@ function table2Sheet (table, sheet, options) {
       sheet.getColumn(colRange.from + 1).width = (+cellStyle.width.split('px')[0]) * __WEBPACK_IMPORTED_MODULE_2__constants__["b" /* WIDTH_RATIO */]
     }
 
-    const fontWeight = cellStyle.fontWeight
-
     sheetCell.value = innerText
     sheetCell.style = {
-      font: { bold: (fontWeight === 'bold' || +fontWeight > 600) ? true : false },
       alignment: {
         vertical: cellStyle.verticalAlign,
         horizontal: cellStyle.textAlign
       }
     }
+
+    ;(options.plugins || [])
+      .map(plugin => plugin.cellCreated)
+      .filter(plugin => plugin)
+      .forEach(plugin => plugin.call(null, {
+        workbook,
+        worksheet: sheet,
+        sheetIndex,
+        tableEls,
+        tableEl: table,
+        cell: sheetCell,
+        cellEl: el
+      }))
   })
 }
 
