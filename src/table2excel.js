@@ -9,29 +9,27 @@ const DEFAULT_WORKBOOK_OPTIONS = {
     firstSheet: 0, activeTab: 1, visibility: 'visible'
   }]
 }
+const DEFAULT_OPTIONS = {
+  workbook: DEFAULT_WORKBOOK_OPTIONS,
+  widthRatio: WIDTH_RATIO,
+  plugins: []
+}
 
 export default class Table2Excel {
 
-  constructor (
-    selector = 'table',
-    options = {
-      workbook: DEFAULT_WORKBOOK_OPTIONS,
-      widthRatio: WIDTH_RATIO
-      plugins: []
-    }
-  ) {
+  constructor (selector = 'table', options = {}) {
     this.tables = Array.from(
       typeof selector === 'string'
         ? document.querySelectorAll(selector)
         : selector
       )
 
-    this.options = options
+    this.options = Object.assign({}, DEFAULT_OPTIONS, options)
 
     // setup plugins
     this.plugins = {}
     PLUGIN_FUNCS.forEach(funName => {
-      this.plugins[funName] = options.plugins.filter(plugin => plugin[funName]).map(plugin => plugin[funName])
+      this.plugins[funName] = this.options.plugins.filter(plugin => plugin[funName]).map(plugin => plugin[funName])
     })
 
     this.pluginContext = {}
@@ -43,7 +41,7 @@ export default class Table2Excel {
       ...context
     }
 
-    this.plugins[func].forEach(handler => handler.call(null, this.pluginContext))
+    this.plugins[func].forEach(handler => handler.call(this, this.pluginContext))
   }
 
   toExcel () {
