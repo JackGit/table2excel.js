@@ -9,6 +9,7 @@ export default {
       ...workcell.style,
       font: {
         ...oldFont,
+        name: cellStyle.fontFamily,
         color: { argb: argb(cellStyle.color) },
         bold: (fontWeight === 'bold' || +fontWeight > 600) ? true : false
       }
