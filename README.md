@@ -8,7 +8,8 @@ It has to be a row * column table
 
 ## Features
 
-
+1. able to export with width, alignment and colors
+2. extendable
 
 ## Dependencies
 
@@ -64,7 +65,7 @@ It's optional, and defaulted as:
       firstSheet: 0, activeTab: 1, visibility: 'visible'
     }]
   },
-  widthRatio: .6
+  widthRatio: .14
   plugins: []
 }
 ```
@@ -76,6 +77,16 @@ It's optional, and defaulted as:
 ## Plugins
 
 Plugin helps to extend the ability of transforming table to excel.
+
+Build-in plugins can be access like:
+
+```js
+Table2Excel.plugins.font
+Table2Excel.plugins.alignment
+Table2Excel.plugins.autoWidth
+Table2Excel.plugins.form
+Table2Excel.plugins.hyperlink
+```
 
 A plugin can be defined to join different phase of table to excel process, and in different phase, plugin is able to access different objects from context.
 
@@ -111,6 +122,8 @@ A plugin can be defined to join different phase of table to excel process, and i
    * @param  {HTMLTableElement} table
    * @param  {ExcelJS.Cell} workcell
    * @param  {HTMLTableCellElement} cell
+   * @param  {colRange} [from, to]
+   * @param  {rowRange} [from, to]
    */
   workcellCreated ({ workbook, tables, worksheet, table, workcell, cell, cellStyle, colRange, rowRange }) {}
 }
