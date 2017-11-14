@@ -112,7 +112,7 @@ A plugin can be defined to join different phase of table to excel process, and i
    * @param  {ExcelJS.Cell} workcell
    * @param  {HTMLTableCellElement} cell
    */
-  workcellCreated ({ workbook, tables, worksheet, table, workcell, cell }) {}
+  workcellCreated ({ workbook, tables, worksheet, table, workcell, cell, cellStyle, colRange, rowRange }) {}
 }
 ```
 
