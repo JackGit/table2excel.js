@@ -1,11 +1,11 @@
 export default {
   workcellCreated ({ workcell, cell }) {
-    const cellStyle = getComputedStyle(cell)
+    const { verticalAlign, textAlign } = getComputedStyle(cell)
     workcell.style = {
       ...workcell.style,
       alignment: {
-        vertical: cellStyle.verticalAlign,
-        horizontal: cellStyle.textAlign
+        vertical: verticalAlign,
+        horizontal: textAlign
       }
     }
   }

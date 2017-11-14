@@ -1,6 +1,11 @@
 import ExcelJS from 'exceljs/dist/es5/exceljs.browser'
 import { mergeCells, saveAsExcel } from './utils'
 import { WIDTH_RATIO } from './constants'
+import fontPlugin from './plugins/font'
+import fillPlugin from './plugins/fill'
+import formPlugin from './plugins/form'
+import alignmentPlugin from './plugins/alignment'
+import hyperlinkPlugin from './plugins/hyperlink'
 
 const PLUGIN_FUNCS = ['workbookCreated', 'worksheetCreated', 'worksheetCompleted', 'workcellCreated']
 const DEFAULT_WORKBOOK_OPTIONS = {
@@ -12,6 +17,7 @@ const DEFAULT_WORKBOOK_OPTIONS = {
 const DEFAULT_OPTIONS = {
   workbook: DEFAULT_WORKBOOK_OPTIONS,
   widthRatio: WIDTH_RATIO,
+  enableDefaultPlugins: true,
   plugins: []
 }
 
@@ -27,6 +33,10 @@ export default class Table2Excel {
     this.options = Object.assign({}, DEFAULT_OPTIONS, options)
 
     // setup plugins
+    if (this.options.enableDefaultPlugins) {
+      this.options.plugins = [formPlugin, hyperlinkPlugin, fontPlugin, fillPlugin, alignmentPlugin, ...this.options.plugins]
+    }
+
     this.plugins = {}
     PLUGIN_FUNCS.forEach(funName => {
       this.plugins[funName] = this.options.plugins.filter(plugin => plugin[funName]).map(plugin => plugin[funName])
@@ -131,18 +141,12 @@ export default class Table2Excel {
       const workcell = mergeCells(worksheet, colRange.from, rowRange.from, colRange.to, rowRange.to)
       const cellStyle = getComputedStyle(el)
 
+      workcell.value = innerText
+
       if (colRange.from === colRange.to) {
         // set column width
         worksheet.getColumn(colRange.from + 1).width = (+cellStyle.width.split('px')[0]) * this.options.widthRatio
-      }
-
-      workcell.value = innerText
-      workcell.style = {
-        alignment: {
-          vertical: cellStyle.verticalAlign,
-          horizontal: cellStyle.textAlign
-        }
-      }
+      }    
 
       // workcellCreated
       this._invokePlugin('workcellCreated', { workcell, cell: el })

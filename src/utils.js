@@ -61,8 +61,21 @@ export const mergeCells = (sheet, x1, y1, x2, y2) => {
 }
 
 /**
- * convert rgb(0,0,0) rgba(0,0,0) to argb: FF00FF00
+ * convert rgb(0,0,0) rgba(0,0,0,0) to argb: FF00FF00
  */
 export const argb = color => {
+	const values = color
+		.split('(')[1].split(')')[0].split(',')
+		.map((v, i) => i === 3 ? v * 255 : v)
 
+	if (values.length === 3) {
+		values.push(255)
+	}
+
+	values.unshift(values.pop())
+
+	return values.map(v => {
+		const s = parseInt(v).toString(16)
+		return s.length === 1 ? `0${s}` : s
+	}).join('').toUpperCase()
 }
