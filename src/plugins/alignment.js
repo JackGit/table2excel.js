@@ -1,6 +1,6 @@
 export default {
-  workcellCreated ({ workcell, cell }) {
-    const { verticalAlign, textAlign } = getComputedStyle(cell)
+  workcellCreated ({ workcell, cell, cellStyle }) {
+    const { verticalAlign, textAlign } = cellStyle
     workcell.style = {
       ...workcell.style,
       alignment: {

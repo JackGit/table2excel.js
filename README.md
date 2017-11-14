@@ -18,7 +18,7 @@ It has to be a row * column table
 
 ## Live Demo
 
-[Demo]()
+[Demo](https://jackgit.github.io/table2excel.js/demo.html)
 
 ## Basic Usage
 

@@ -6,6 +6,7 @@ import fillPlugin from './plugins/fill'
 import formPlugin from './plugins/form'
 import alignmentPlugin from './plugins/alignment'
 import hyperlinkPlugin from './plugins/hyperlink'
+import autoWidthPlugin from './plugins/autoWidth'
 
 const PLUGIN_FUNCS = ['workbookCreated', 'worksheetCreated', 'worksheetCompleted', 'workcellCreated']
 const DEFAULT_WORKBOOK_OPTIONS = {
@@ -34,7 +35,7 @@ export default class Table2Excel {
 
     // setup plugins
     if (this.options.enableDefaultPlugins) {
-      this.options.plugins = [formPlugin, hyperlinkPlugin, fontPlugin, fillPlugin, alignmentPlugin, ...this.options.plugins]
+      this.options.plugins = [formPlugin, hyperlinkPlugin, fontPlugin, fillPlugin, alignmentPlugin, autoWidthPlugin, ...this.options.plugins]
     }
 
     this.plugins = {}
@@ -143,13 +144,8 @@ export default class Table2Excel {
 
       workcell.value = innerText
 
-      if (colRange.from === colRange.to) {
-        // set column width
-        worksheet.getColumn(colRange.from + 1).width = (+cellStyle.width.split('px')[0]) * this.options.widthRatio
-      }    
-
       // workcellCreated
-      this._invokePlugin('workcellCreated', { workcell, cell: el })
+      this._invokePlugin('workcellCreated', { workcell, cell: el, rowRange, colRange, cellStyle })
     })
   }
 

@@ -1,9 +1,8 @@
 import { argb } from '../utils'
 
 export default {
-  workcellCreated ({ workcell, cell }) {
-    const style = getComputedStyle(cell)
-    const color = argb(style.backgroundColor)
+  workcellCreated ({ workcell, cell, cellStyle }) {
+    const color = argb(cellStyle.backgroundColor)
 
     if (color === '00000000') {
       // background is transparent, equals none pattern fill

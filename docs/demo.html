@@ -6,28 +6,13 @@
     <script src="js/exceljs.min.js"></script>
     <script src="js/table2excel.core.js"></script>
     <script>
-    function exportTable2 () {
-      new Table2Excel('#table2', {
-        plugins: [{
-          workcellCreated ({ workcell, cell }) {
-            const child = cell.children[0]
-            if (['INPUT', 'SELECT', 'TEXTAREA'].includes(child.tagName)) {
-              workcell.value = child.value
-            }
-          }
-        }, {
-          workcellCreated ({ workcell, cell }) {
-            const child = cell.children[0]
-            if (child.tagName === 'A') {
-              workcell.value = { text: child.innerText, hyperlink: child.href }
-            }
-          }
-        }]
-      }).export()
+    function exportTables () {
+      new Table2Excel('table').export()
     }
     </script>
   </head>
   <body>
+    <button onclick="exportTables()">export</button>
     <h1>Table 1</h1>
     <table class="table table-bordered" border="1" align="center">
     				<thead>
@@ -128,7 +113,6 @@
           </table>
 
 <h1>Table 2</h1>
-<button onclick="exportTable2()">export</button>
 <table border="1" id="table2">
   <tbody>
     <tr>
