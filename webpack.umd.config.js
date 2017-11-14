@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './src/table2excel.js',
+  entry: './src/index.js',
   output: {
     filename: './dist/table2excel.min.js',
     library: 'Table2Excel',

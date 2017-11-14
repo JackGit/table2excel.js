@@ -3,4 +3,4 @@ export const MIME_TYPES = {
   xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
 }
 
-export const WIDTH_RATIO = .6
+export const WIDTH_RATIO = .14

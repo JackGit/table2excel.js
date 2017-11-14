@@ -1,8 +1,8 @@
 {
   "name": "table2excel.js",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "description": "",
-  "main": "src/table2excel.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.core.config.js -p && webpack --config webpack.umd.config.js -p"
