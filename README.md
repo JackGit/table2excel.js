@@ -47,11 +47,11 @@ const table2Excel = new Table2Excel(selector, options)  // new Table2Excel('tabl
 table2Excel.export(fileName, extension) // table2Excel.export('my-exported-table', 'xlsx')
 ```
 
-`extension` can be `'xls'` or `'xlsx'`.
+`extension` can be `'xls'` or `'xlsx'`, default as `'xlsx'`
 
 ### selector
 
-It's optional, and defaulted as `'table'`.
+It's optional, and defaulted as `'table'`
 
 ### options
 
@@ -65,7 +65,8 @@ It's optional, and defaulted as:
       firstSheet: 0, activeTab: 1, visibility: 'visible'
     }]
   },
-  widthRatio: .14
+  widthRatio: .14,
+  enableDefaultPlugins: true,
   plugins: []
 }
 ```
