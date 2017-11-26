@@ -66,7 +66,7 @@ It's optional, and defaulted as:
     }]
   },
   widthRatio: .14,
-  enableDefaultPlugins: true,
+  exportStyle: true,
   plugins: []
 }
 ```
