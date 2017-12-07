@@ -149,7 +149,7 @@ Example 2, you can add your customized cell parser for your table:
 ```js
 const table2Excel = new Table2Excel('table', {
   plugins: [{
-    workcellCreated ({ workbook, tables, worksheet, table, workcell, cell }) {
+    workcellCreated ({ workbook, tables, worksheet, table, workcell, cell, cellStyle, rowRange, colRange }) {
       workcell.value = { text: '', link: '' }
       workcell.style = {
         ...workcell.style,
