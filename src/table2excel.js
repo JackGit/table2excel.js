@@ -78,8 +78,11 @@ export default class Table2Excel {
     // get total cols and rows
     const totalRows = table.rows.length
     let totalCols = 0
-    for(let i = 0; i < table.rows[0].cells.length; i++){
-      totalCols += table.rows[0].cells[i].colSpan
+
+    if (table.rows.length > 0) {
+      for (let i = 0; i < table.rows[0].cells.length; i++) {
+        totalCols += table.rows[0].cells[i].colSpan
+      }
     }
 
     const cells = []
