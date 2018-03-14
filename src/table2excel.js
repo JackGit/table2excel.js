@@ -77,7 +77,10 @@ export default class Table2Excel {
   toSheet (table, worksheet) {
     // get total cols and rows
     const totalRows = table.rows.length
-    const totalCols = Math.max(...Array.from(table.rows).map(row => row.cells.length))
+    let totalCols = 0
+    for(let i = 0; i < table.rows[0].cells.length; i++){
+      totalCols += table.rows[0].cells[i].colSpan
+    }
 
     const cells = []
     Array.from(table.rows).forEach(row => {
