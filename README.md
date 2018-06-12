@@ -82,11 +82,11 @@ Plugin helps to extend the ability of transforming table to excel.
 Build-in plugins can be access like:
 
 ```js
-Table2Excel.plugins.font
-Table2Excel.plugins.alignment
-Table2Excel.plugins.autoWidth
-Table2Excel.plugins.form
-Table2Excel.plugins.hyperlink
+Table2Excel.plugins.fontPlugin
+Table2Excel.plugins.alignmentPlugin
+Table2Excel.plugins.autoWidthPlugin
+Table2Excel.plugins.formPlugin
+Table2Excel.plugins.hyperlinkPlugin
 ```
 
 A plugin can be defined to join different phase of table to excel process, and in different phase, plugin is able to access different objects from context.
