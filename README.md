@@ -21,26 +21,49 @@ It has to be a row * column table
 
 [Demo](https://jackgit.github.io/table2excel.js/index.html)
 
-## Basic Usage
+## Include table2excel.js
 
-npm
+### npm
+
+`ExcelJS` is peer dependency to `table2excel.js`, so you need to install exceljs first:
+
+```bash
+npm i exceljs
+```
+
+then, install table2excel.js:
 
 ```bash
 npm i table2excel.js
 ```
 
-table2excel.min.js (with ExcelJS packed)
+use in your code like:
+
+```js
+import Table2Excel from 'table2excel.js'
+new Table2Excel('table').export()
+```
+
+you may also need a config in webpack:
+
+```js
+node: { fs: 'empty' }
+```
+
+### table2excel.min.js (with ExcelJS packed)
 
 ```html
 <script src="path/to/table2excel.min.js"></script>
 ```
 
-table2excel.core.js (without ExcelJS packed)
+### table2excel.core.js (without ExcelJS packed)
 
 ```html
 <script src="path/to/exceljs.min.js"></script>
 <script src="path/to/table2excel.core.js"></script>
 ```
+
+## Basic Usage
 
 ```js
 const table2Excel = new Table2Excel(selector, options)  // new Table2Excel('table')

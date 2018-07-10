@@ -1,8 +1,9 @@
 {
   "name": "table2excel.js",
-  "version": "0.5.7",
+  "version": "0.6.3",
   "description": "",
   "main": "dist/table2excel.common.js",
+  "module": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.common.config.js -p && webpack --config webpack.core.config.js -p && webpack --config webpack.umd.config.js -p"
@@ -25,8 +26,10 @@
   },
   "homepage": "https://github.com/jackgit/table2excel.js#readme",
   "dependencies": {
-    "exceljs": "^0.6.2",
     "file-saver": "^1.3.3"
+  },
+  "peerDependencies": {
+    "exceljs": "^0.6.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

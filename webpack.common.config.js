@@ -17,9 +17,13 @@ module.exports = {
       }
     ]
   },
-  /* externals: {
-    'exceljs/dist/es5/exceljs.browser': 'exceljs/dist/es5/exceljs.browser'
-  }, */
+  externals: {
+    'exceljs/dist/es5/exceljs.browser': {
+      commonjs: 'exceljs/dist/es5/exceljs.browser',
+      commonjs2: 'exceljs/dist/es5/exceljs.browser',
+      root: 'ExcelJS'
+    }
+  },
   node: {
     fs: 'empty'
   }

@@ -6,22 +6,20 @@ export default {
 
     if (color === '00000000') {
       // background is transparent, equals none pattern fill
-      workcell.style = {
-        ...workcell.style,
+      workcell.style = Object.assign({}, workcell.style, {
         fill: {
           type: 'pattern',
           pattern: 'none'
         }
-      }
+      })
     } else {
-      workcell.style = {
-        ...workcell.style,
+      workcell.style = Object.assign({}, workcell.style, {
         fill: {
           type: 'pattern',
           pattern: 'solid',
           fgColor: { argb: color }
         }
-      }
+      })
     }
   }
 }

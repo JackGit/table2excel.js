@@ -42,11 +42,7 @@ export default class Table2Excel {
   }
 
   _invokePlugin (func, context = {}) {
-    this.pluginContext = {
-      ...this.pluginContext,
-      ...context
-    }
-
+    this.pluginContext = Object.assign({}, this.pluginContext, context)
     this.plugins[func].forEach(handler => handler.call(this, this.pluginContext))
   }
 
