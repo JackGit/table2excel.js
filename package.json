@@ -1,11 +1,11 @@
 {
   "name": "table2excel.js",
-  "version": "0.5.3",
+  "version": "0.5.7",
   "description": "",
-  "main": "src/index.js",
+  "main": "dist/table2excel.common.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.core.config.js -p && webpack --config webpack.umd.config.js -p"
+    "build": "webpack --config webpack.common.config.js -p && webpack --config webpack.core.config.js -p && webpack --config webpack.umd.config.js -p"
   },
   "repository": {
     "type": "git",
