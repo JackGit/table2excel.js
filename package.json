@@ -1,6 +1,6 @@
 {
   "name": "table2excel.js",
-  "version": "0.6.5",
+  "version": "0.6.6",
   "description": "",
   "main": "es5/index.js",
   "scripts": {
@@ -36,9 +36,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-latest": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
-    "babel-preset-stage-3": "^6.24.1",
     "cross-env": "^5.2.0"
   }
 }
