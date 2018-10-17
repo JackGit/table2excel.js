@@ -13,8 +13,7 @@ const DEFAULT_WORKBOOK_OPTIONS = {
 const DEFAULT_OPTIONS = {
   workbook: DEFAULT_WORKBOOK_OPTIONS,
   widthRatio: WIDTH_RATIO,
-  exportStyle: true,
-  plugins: []
+  plugins: [...Object.values(plugins)]
 }
 
 export default class Table2Excel {
@@ -27,11 +26,6 @@ export default class Table2Excel {
       )
 
     this.options = Object.assign({}, DEFAULT_OPTIONS, options)
-
-    // setup plugins
-    if (this.options.exportStyle) {
-      this.options.plugins = [...Object.values(plugins), ...this.options.plugins]
-    }
 
     this.plugins = {}
     PLUGIN_FUNCS.forEach(funName => {
