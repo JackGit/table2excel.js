@@ -20,9 +20,9 @@ var _plugins2 = _interopRequireDefault(_plugins);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var PLUGIN_FUNCS = ['workbookCreated', 'worksheetCreated', 'worksheetCompleted', 'workcellCreated'];
 var DEFAULT_WORKBOOK_OPTIONS = {
@@ -34,8 +34,7 @@ var DEFAULT_WORKBOOK_OPTIONS = {
 var DEFAULT_OPTIONS = {
   workbook: DEFAULT_WORKBOOK_OPTIONS,
   widthRatio: _constants.WIDTH_RATIO,
-  exportStyle: true,
-  plugins: []
+  plugins: [].concat(_toConsumableArray(Object.values(_plugins2.default)))
 };
 
 var Table2Excel = function () {
@@ -50,11 +49,6 @@ var Table2Excel = function () {
     this.tables = Array.from(typeof selector === 'string' ? document.querySelectorAll(selector) : selector);
 
     this.options = Object.assign({}, DEFAULT_OPTIONS, options);
-
-    // setup plugins
-    if (this.options.exportStyle) {
-      this.options.plugins = [].concat(_toConsumableArray(Object.values(_plugins2.default)), _toConsumableArray(this.options.plugins));
-    }
 
     this.plugins = {};
     PLUGIN_FUNCS.forEach(function (funName) {
