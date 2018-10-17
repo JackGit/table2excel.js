@@ -89,7 +89,14 @@ It's optional, and defaulted as:
     }]
   },
   widthRatio: .14,
-  plugins: []
+  plugins: [
+    Table2Excel.plugins.fontPlugin,
+    Table2Excel.plugins.fillPlugin,
+    Table2Excel.plugins.formPlugin,
+    Table2Excel.plugins.alignmentPlugin,
+    Table2Excel.plugins.hyperlinkPlugin,
+    Table2Excel.plugins.autoWidthPlugin
+  ]
 }
 ```
 
