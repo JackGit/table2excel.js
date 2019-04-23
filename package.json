@@ -1,6 +1,6 @@
 {
   "name": "table2excel.js",
-  "version": "0.6.7",
+  "version": "1.0.0",
   "description": "",
   "main": "es5/index.js",
   "scripts": {
